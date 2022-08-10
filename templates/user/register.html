@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {%block title%} Register User  {% endblock %} 
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="conatiner">
+    <div class="row my-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="border p-2 bg-white">
+                <h4>Register Page</h4>
+                <hr>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input class="btn btn-success" type="submit" value="Register">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

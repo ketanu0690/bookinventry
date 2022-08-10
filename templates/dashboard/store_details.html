@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {%block title%} Store Details {% endblock %} 
+{% block content %}
+<div class="container">
+  <h1>Your Stores</h1>
+  <hr />
+
+  <table class="table m-4">
+    <thead>
+      <tr>
+        <th scope="col">Store_Id</th>
+        <th scope="col">Store Name</th>
+        <th scope="col">Owner Name</th>
+        <th scope="col">Manage Store</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      {% for s in store %}
+      <tr>
+        <th scope="row">{{s.id}}</th>
+        <td>
+          {{s.store_name}}
+          <img
+            src="{{s.store_image.url}}"
+            alt=""
+            style="width: 50px; height: 50px"
+          />
+        </td>
+        <td>{{s.owner_name}}</td>
+        <td>
+          <a
+            href="{% url 'Store_Manage' s.id %}"
+            class="btn btn-primary"
+            type="button"
+          >
+            View Inverntory</a
+          >
+        </td>
+      </tr>
+
+      {% endfor %}
+      
+  
+     
+       
+    </tbody>
+  </table>
+</div>
+{% endblock %}

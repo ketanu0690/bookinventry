@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Book Edit {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row p-4">
+    <div class="row p-4"></div>
+    <div class="row">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+            Store Detail 
+            </div>
+            <div class="row p-3">
+                <div class="col-md-8">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <!-- {{ form|crispy }} -->
+                        <input class="btn btn-info" type="submit" value="Update">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

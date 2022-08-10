@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {%block title%} Home page {% endblock %} 
+{% block content %}
+
+<div class="container">
+    <h1>Your Inventory  </h1>
+    <td><a  href="{% url 'Add_Book_To_store' store_id %}"  class="btn btn-primary" type="button">Add Book From the Given List </a></td>
+    <hr>
+    
+    <table class="table m-4">
+        <thead>
+          <tr>
+            <th scope="col"> Book_Id </th>
+            <th scope="col"> Book Name </th>
+            <th scope="col"> Author Name </th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Manage Inventory </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for book in books %}
+          <tr>
+            <th scope="row">{{book.0.id}}</th>
+            <td>{{book.0.book_name}}</td>
+            <td>{{book.0.author_name}}</td>
+            <td>{{book.0.quantity}}</td>
+            <td><a  href="{% url 'Edit_Book' book.0.id %}"  class="btn btn-primary" type="button">Edit Book Details </a>
+            <a  href="{% url 'Remove_book' book.0.id %}"  class="btn btn-danger" type="button">Remove Book  </a></td>
+         
+        </tr>
+        {%endfor %}
+        
+        </tbody>
+      </table>
+    </div>
+
+{% endblock %}

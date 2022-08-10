@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {%block title%} Home page {% endblock %} 
+{% block content %}
+
+{% if user.is_authenticated %} 
+<div class="d-grid gap-2 d-md-flex justify-content-md-end m-2">
+  <a  href="{% url 'Add_Book' %}"  class="btn btn-primary" type="button">Add Books To All Book List  </a> 
+  <a href="{% url 'Store_register' %}" class="btn btn-primary me-md-2" type="button">Create Store</a>
+  <a  href="{% url 'Store_Details' %}"  class="btn btn-primary" type="button">View Store</a>
+</div>
+
+{% else %}
+<center>
+  <h3>You Can Only Read Books To Manage Inventory Login / Register </h3>
+</center>
+{% endif %}
+
+<hr>
+<h1>  <i>E-Books:-</i> </h1>
+<hr>
+
+<div class="d-flex justify-content-evenly m-4">
+{% for book in data %}
+        <div class="card m-6" style="width: 18rem;">
+            <img src={{book.volumeInfo.imageLinks.thumbnail}} class="card-img-top" alt="...">
+            <h4>{{book.volumeInfo.title}} </h4>
+            <div class="card-body">
+              <p class="card-text">{{book.volumeInfo.description|truncatechars:25}} </p>
+            </div>
+       <a class="btn btn-primary" href={{book.volumeInfo.previewLink}}>Read Book</a>
+            
+          </div>
+         {% endfor %}
+
+      </div>
+<hr>
+
+{% endblock %}

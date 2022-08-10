@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {%block title%} Register Store {% endblock %} 
+{% load crispy_forms_tags %}
+{% block content %}
+<a href="{% url 'Add_Book' %}" type="submit" class="btn btn-primary">Add Your Book in List Given  </a>
+<form method="POST"  class="m-3">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <input class="btn btn-success btn-block" type="submit" value="Add">
+</form>
+{% endblock %}
