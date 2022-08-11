@@ -1,30 +1,30 @@
 # bookinventry
-To start project  First Go to CMD (command prompt) and enter following CODE :-
-git clone https://github.com/ketanu0690/bookinventry.git
-virtualenv env
-.\env\Scripts\activate.bat
-cd bookinventry
-pip install -r requirements.txt
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
-http://127.0.0.1:8000/  
+To :confused: start project  First Go to CMD (command prompt) and  	:writing_hand: enter following CODE :- <br />
+:point_right:.`git clone https://github.com/ketanu0690/bookinventry.git`<br />
+:point_right: ` virtualenv env`<br />
+:point_right: `.\env\Scripts\activate.bat`<br />
+:point_right: `cd bookinventry`<br />
+:point_right: `pip install -r requirements.txt`<br />
+:point_right: `python manage.py makemigrations`<br />
+:point_right:`python manage.py migrate`<br />
+:point_right: `python manage.py createsuperuser`<br />
+:point_right: `python manage.py runserver`<br />
+:point_right: `http://127.0.0.1:8000/  `<br />
 
-// when you open the web portal it will ask you to Login / Register
-you Can register with New User or Login With Admin
+:writing_hand: when you open the web portal it will ask you to Login / Register<br />
+you Can register with New User or Login With Admin<br />
 
-You will See Ebooks Which ic Google Book Api fetched data 
+You will See Ebooks Which ic Google Book Api fetched data <br />
 ![image](https://user-images.githubusercontent.com/78308610/184005607-a7982ed0-8842-4fdb-aa09-d0ee83d3fad9.png)
 
- For You List Of All Books might be Empty so i suggest to create 5 random books like
--spider man	stan lee	10
--Dr strange	Marvel	10
--Man of Steel	DC compnay	20
--Batman DarkKnights	Joker	40
--unity book	Aamir khan	23
--youtube book	money maker	43
--family man	amazone prime	12
+ For You List Of All Books might be Empty so i suggest to create 5 random books like<br />
+-spider man	stan lee	10<br />
+-Dr strange	Marvel	10<br />
+-Man of Steel	DC compnay	20<br />
+-Batman DarkKnights	Joker	40<br />
+-unity book	Aamir khan	23<br />
+-youtube book	money maker	43<br />
+-family man	amazone prime	12<br />
 ![image](https://user-images.githubusercontent.com/78308610/184006193-14708be1-52ad-4021-91bb-cc3177cfa297.png)
 ![image](https://user-images.githubusercontent.com/78308610/184006253-389d6826-079e-4c8d-87a7-4f76549127c6.png)
 
