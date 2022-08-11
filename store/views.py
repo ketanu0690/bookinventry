@@ -12,10 +12,18 @@ from django.contrib.auth.models import User
 
 @login_required(login_url='user_login')
 def index(request):
-    URL = "https://www.googleapis.com/books/v1/volumes?q=books:keyes&startIndex=0&maxResults=7&key=AIzaSyC9dqkMwlQv6rzXos3NFLWLcizJTZR5BGE"
-    r = requests.get(url=URL)
-    data = r.json()
-    books = data['items']
+    if request.method  == 'POST':
+        word = request.POST.get('search')
+        URL = "https://www.googleapis.com/books/v1/volumes?q=$'{0}':keyes&startIndex=0&maxResults=7&key=AIzaSyC9dqkMwlQv6rzXos3NFLWLcizJTZR5BGE".format(word)
+        r = requests.get(url=URL)
+        data = r.json()
+        books = data['items']
+    else:
+        URL = "https://www.googleapis.com/books/v1/volumes?q=google:keyes&startIndex=0&maxResults=7&key=AIzaSyC9dqkMwlQv6rzXos3NFLWLcizJTZR5BGE"
+        r = requests.get(url=URL)
+        data = r.json()
+        books = data['items']
+        # print(books)
     return render(request, 'dashboard/index.html', {"data": books})
 
 

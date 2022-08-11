@@ -1,4 +1,7 @@
-{% extends 'base.html' %} {%block title%} Home page {% endblock %} 
+{% extends 'base.html' %} 
+
+{%block title%} Home page {% endblock %} 
+
 {% block content %}
 
 {% if user.is_authenticated %} 
@@ -6,6 +9,7 @@
   <a  href="{% url 'Add_Book' %}"  class="btn btn-primary" type="button">Add Books To All Book List  </a> 
   <a href="{% url 'Store_register' %}" class="btn btn-primary me-md-2" type="button">Create Store</a>
   <a  href="{% url 'Store_Details' %}"  class="btn btn-primary" type="button">View Store</a>
+  {% include 'dashboard/Search.html' %}
 </div>
 
 {% else %}
@@ -22,7 +26,7 @@
 {% for book in data %}
         <div class="card m-6" style="width: 18rem;">
             <img src={{book.volumeInfo.imageLinks.thumbnail}} class="card-img-top" alt="...">
-            <h4>{{book.volumeInfo.title}} </h4>
+            <h4>{{book.volumeInfo.title|truncatechars:25}} </h4>
             <div class="card-body">
               <p class="card-text">{{book.volumeInfo.description|truncatechars:25}} </p>
             </div>
