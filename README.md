@@ -42,3 +42,6 @@ Edit and delete for books from store  is possible
 ![image](https://user-images.githubusercontent.com/78308610/184006882-83981179-d1e0-45fe-903f-eae8b65fe103.png)
 
 
+use this link for connection with aws to Django  
+https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-20-04
+https://www.youtube.com/watch?v=ShO3GiNbcKI
